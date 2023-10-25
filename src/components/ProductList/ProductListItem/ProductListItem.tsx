@@ -1,3 +1,5 @@
+import {NavLink} from 'react-router-dom'
+
 import {Product} from '../../../types/ml-api-types'
 import './ProductListItem.css'
 
@@ -13,6 +15,9 @@ export const ProductListItem: React.FC<ProductListItemProps> = ({product}) => {
       <div className="product-info">
         <p>Condition: {product.condition}</p>
         <p>{product.price.toLocaleString('es-AR', {style: 'currency', currency: 'ARS'})}</p>
+      </div>
+      <div className="product-actions">
+        <NavLink to={`/product/${product.id}`}>VIEW</NavLink>
       </div>
     </article>
   )

@@ -10,7 +10,7 @@ export const ProductList = () => {
   return (
     <section className="root">
       {products ? (
-        products.map((product: Product) => <ProductListItem product={product} />)
+        products.map((product: Product) => <ProductListItem key={product.id} product={product} />)
       ) : (
         <>Loading</>
       )}
